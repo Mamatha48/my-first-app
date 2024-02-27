@@ -15,10 +15,16 @@ this.getProject();
   }
 
   showDiv: boolean = false;
+  close: boolean = false;
 
   toggleChatBot() {
     this.showDiv = !this.showDiv;
-    console.log("show div",this.showDiv);
+    console.log("chatBot opened",this.showDiv);
+  }
+  toggleClose()
+  {
+    this.showDiv = !this.showDiv;
+    console.log("chatBot Closed", this.showDiv);
   }
   getProject(){
     this.hackathon.getEntities().subscribe(res =>{

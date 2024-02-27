@@ -77,9 +77,6 @@
             color: #969ba6;
         }
     }
-    .fa-circle-q, .fa-xmark{
-        color: #ffffff;
-    }
     .fa-paper-plane{
         color: #007ED9;
         margin-left: 16px;
@@ -87,4 +84,83 @@
 }
 .q-conversation{
     padding: 20px;
+}
+
+.q-project-list thead tr
+{
+    background: #0000000d;
+}
+.q-project-list tbody tr
+{
+background-color: #fff;
+}
+.fa-circle-q,
+.fa-xmark {
+    color: #ffffff;
+}
+@media (min-width: 1200px){
+.container
+{
+    max-width: 100%;
+    background-color: #363f4b;
+    color: #ffffff;
+}
+}
+
+#message-section::-webkit-scrollbar {
+    width: 10px;
+}
+
+#message-section {
+    height: 32vw;
+    padding: 0 2.5vw;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+}
+
+#message-section::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+#message-section::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
+}
+
+#message-section #bot,
+#message-section #user {
+    position: relative;
+    bottom: 0;
+    min-height: 1.5vw;
+    border: 0.15vw solid #777;
+    background-color: #fff;
+    border-radius: 0px 1.5vw 1.5vw 1.8vw;
+    padding: 1vw;
+    margin: 1.5vw 0;
+}
+
+#message-section #user {
+    border: 1.5px solid #000;
+    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+    background-color: #000;
+    float: right;
+}
+
+#message-section #user #user-response {
+    color: #fff;
+}
+
+#message-section .message {
+    color: #000;
+    clear: both;
+    line-height: 1.2vw;
+    font-size: 1.2vw;
+    padding: 8px;
+    position: relative;
+    margin: 8px 0;
+    max-width: 85%;
+    word-wrap: break-word;
+    z-index: 2;
 }

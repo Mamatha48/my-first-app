@@ -1,4 +1,31 @@
 <div class="chatbot-prompt">
+    <div class="container d-flex justify-content-start align-items-center text-align-center py-3">
+        <i class="fa-regular fa-circle-q fa-2xl mr-2"></i>
+        <h2>Qonverse</h2>
+    </div>
+    <div class="q-table p-4">
+        <div class="projectHeader pb-2">
+            <h4>Projects : </h4>
+        </div>
+        <div class="q-project-list">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Worken ON</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row" id="projName">Qonverse</th>
+                        <td id="projDes">Hackethon 2024</td>
+                        <td id ="workenOn">Sep 20, 2023</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
     <div>
         <div class="chatbot-btn" (click)="toggleChatBot()">
             <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i>
@@ -12,14 +39,14 @@
                 <i class="fa-regular fa-circle-q fa-2xl"></i>
                 <div class="q-title">Qonverse</div>
             </div>
-            <i class="fa-regular fa-xmark fa-lg"></i>
+            <i (click)="toggleClose()" class="fa-regular fa-xmark fa-lg"></i>
         </div>
-        <div class="q-conversation">
-            <input type="text">
+        <div id="message-section">
+            <div class="message" id="bot"><span id="bot-response">Hello.. I'm listening! Go on..</span></div>
         </div>
         <div class="input-field">
             <input placeholder="Type your message here ..." type="text">
-            <i class="fa-regular fa-paper-plane fa-lg pl-4"></i>
+            <i class="fa-regular fa-paper-plane fa-lg pl-4" id="send-btn"></i>
         </div>
     </div>
 </div>
