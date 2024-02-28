@@ -13,7 +13,7 @@
                     <tr>
                         <th scope="col">Project Name</th>
                         <th scope="col">Description</th>
-                        <th scope="col">Worken ON</th>
+                        <th scope="col">Worked on</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,6 @@
     <div>
         <div class="chatbot-btn" (click)="toggleChatBot()">
             <i class="fa-regular fa-comment fa-flip-horizontal fa-lg"></i>
-            <!-- <img src="./../assets/comment-regular-chatbot.svg" alt="" height="20px"> -->
             <span>ChatBot</span>
         </div>
     </div>
@@ -42,11 +41,17 @@
             <i (click)="toggleClose()" class="fa-regular fa-xmark fa-lg"></i>
         </div>
         <div id="message-section">
-            <div class="message" id="bot"><span id="bot-response">Hello.. I'm listening! Go on..</span></div>
+            <div *ngFor="let chatMessage of chatMessages" class="message" [ngClass]="{ 'user': chatMessage.sender === 'user', 'bot': chatMessage.sender === 'bot' }"><span>{{ chatMessage.message }}</span></div>
         </div>
-        <div class="input-field">
-            <input placeholder="Type your message here ..." type="text">
-            <i class="fa-regular fa-paper-plane fa-lg pl-4" id="send-btn"></i>
+        <div class="input-field" id="input-section">
+            <input [(ngModel)]="userMessage" (keydown.enter)="sendMessage()"  placeholder="Type your message here ..." type="text">
+            <button class="send" (click)="sendMessage()">
+                <div class="circle"><i class="fa-regular fa-paper-plane fa-lg pl-4" id="send-btn"></i></div>
+            </button>
+            <button class="send" (click)="toggleVoice()">
+                <div class="circle"><i class="fa-regular fa-microphone-slash fa-lg pl-3" id="voice-btn" *ngIf="!enableVoice"></i></div>
+                <div class="circle"><i class="fa-regular fa-microphone fa-lg pl-3" id="voice-btn" *ngIf="enableVoice"></i></div>
+            </button>
         </div>
     </div>
 </div>

@@ -16,8 +16,6 @@
     color: #ffffff;
 }
 .chatbot-btn i{
-    /* transform: rotate(270deg); */
-    /* width: 20px; */
     color: #ffffff;
 }
 .msgWindow{
@@ -112,7 +110,7 @@ background-color: #fff;
 }
 
 #message-section {
-    height: 32vw;
+    height: 33.5vw;
     padding: 0 2.5vw;
     overflow-y: auto;
     scrollbar-width: thin;
@@ -129,26 +127,25 @@ background-color: #fff;
     border: 3px solid var(--scrollbarBG);
 }
 
-#message-section #bot,
-#message-section #user {
+#message-section .user {
+    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
+    float: right !important;
+}
+
+#message-section .bot,
+#message-section .user {
     position: relative;
     bottom: 0;
     min-height: 1.5vw;
-    border: 0.15vw solid #777;
     background-color: #fff;
     border-radius: 0px 1.5vw 1.5vw 1.8vw;
     padding: 1vw;
     margin: 1.5vw 0;
 }
 
-#message-section #user {
-    border: 1.5px solid #000;
-    border-radius: 1.5vw 0vw 1.5vw 1.8vw;
-    background-color: #000;
-    float: right;
-}
 
-#message-section #user #user-response {
+
+#message-section .user .user-response {
     color: #fff;
 }
 
@@ -163,4 +160,48 @@ background-color: #fff;
     max-width: 85%;
     word-wrap: break-word;
     z-index: 2;
+}
+
+#input-section {
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    overflow: hidden;
+    width: 100%;
+}
+
+#input-section input {
+    color: #000;
+    outline: none;
+}
+
+.send {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+    margin-right: 0vw;
+    padding: 0;
+    position: relative;
+    outline: none;
+}
+.send .circle {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-lg{
+    line-height: unset;
+}
+
+.fa-microphone-slash
+{
+    color: #c3c6d1;
+}
+
+.fa-microphone{
+    color:#007ED9;
 }
